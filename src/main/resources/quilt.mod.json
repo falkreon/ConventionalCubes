@@ -1,25 +1,26 @@
 {
 	"schema_version": 1,
 	"quilt_loader": {
-		"group": "com.example",
-		"id": "example_mod",
+		"group": "blue.endless",
+		"id": "conventional_cubes",
 		"version": "${version}",
 		"metadata": {
-			"name": "Mod Name",
-			"description": "A short description of your mod.",
+			"name": "Conventional Cubes",
+			"description": "Decorative blocks: vintage games, clean new materials, and useful shapes",
 			"contributors": {
-				"Your name here": "Owner"
+				"Falkreon": "Owner"
 			},
 			"contact": {
-				"homepage": "https://example.com/",
-				"issues": "https://github.com/QuiltMC/quilt-template-mod/issues",
-				"sources": "https://github.com/QuiltMC/quilt-template-mod"
+				"homepage": "https://github.com/falkreon/ConventionalCubes",
+				"issues": "https://github.com/falkreon/ConventionalCubes/issues",
+				"sources": "https://github.com/falkreon/ConventionalCubes"
 			},
-			"icon": "assets/example_mod/icon.png"
+			"icon": "assets/conventional_cubes/icon.png"
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "blue.endless.ccubes.ConventionalCubesMod",
+			"client_init": "blue.endless.ccubes.client.CCubesClient"
 		},
 		"depends": [
 			{
@@ -36,5 +37,5 @@
 			}
 		]
 	},
-	"mixin": "example_mod.mixins.json"
+	"mixin": "conventional_cubes.mixins.json"
 }
