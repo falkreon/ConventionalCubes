@@ -1,0 +1,7 @@
+{
+  "parent": "{{parent}}",
+  "textures": {
+    "side": "{{side}}",
+    "top": "{{top}}"
+  }
+}

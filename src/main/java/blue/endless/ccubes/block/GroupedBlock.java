@@ -1,8 +1,9 @@
-package blue.endless.ccubes;
+package blue.endless.ccubes.block;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import blue.endless.ccubes.WordWrap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Material;
@@ -16,17 +17,24 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.BlockView;
 
-public class GroupedBlock extends Block {
-	protected final String group;
+public class GroupedBlock extends Block implements SyntheticDataBlock {
+	public static String RECIPE_STONECUTTER = "stonecutter";
+	public static String RECIPE_SAWMILL = "sawmill";
 	
-	public GroupedBlock(Material material, DyeColor color, String group) {
+	protected final String group;
+	protected final String id;
+	protected String recipeKey = RECIPE_STONECUTTER;
+	
+	public GroupedBlock(Material material, DyeColor color, String group, String id) {
 		super(Settings.of(material, color).strength(1.0f, 15.0f));
 		this.group = group;
+		this.id = id;
 	}
 	
-	public GroupedBlock(Settings settings, String group) {
+	public GroupedBlock(Settings settings, String group, String id) {
 		super(settings);
 		this.group = group;
+		this.id = id;
 	}
 	
 	
@@ -56,6 +64,19 @@ public class GroupedBlock extends Block {
 	
 	public String getGroup() {
 		return group;
+	}
+	
+	public String getId() {
+		return id;
+	}
+	
+	public GroupedBlock setRecipeKey(String key) {
+		this.recipeKey = key;
+		return this;
+	}
+	
+	public String getRecipeKey() {
+		return recipeKey;
 	}
 }
 
