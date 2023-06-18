@@ -6,15 +6,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.function.IntUnaryOperator;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import org.quiltmc.loader.api.minecraft.ClientOnly;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.resource.language.I18n;
 
 public class WordWrap {
 	
-	
-	@Environment(EnvType.CLIENT)
+	@ClientOnly
 	public static List<String> translateAndWrap(String str, int wrapWidth) {
 		return wordWrapClient(I18n.translate(str), wrapWidth);
 	}
@@ -23,11 +22,11 @@ public class WordWrap {
 	 * Wraps str to wrapWidth, in *pixels*. This method is useable only on the client since it uses MinecraftClient's
 	 * TextRenderer to judge the width of Strings.
 	 */
-	@Environment(EnvType.CLIENT)
+	@ClientOnly
 	public static List<String> wordWrapClient(String str, int wrapWidth) {
 		IntUnaryOperator charWidthGetter = (int ch)->(int)MinecraftClient.getInstance().textRenderer.getWidth(""+(char)ch);
 		
-		String languageCode = MinecraftClient.getInstance().getLanguageManager().getLanguage().getCode();
+		String languageCode = MinecraftClient.getInstance().getLanguageManager().getLanguage();
 		Locale currentLocale = Locale.forLanguageTag(languageCode);
 		
 		return wrapToWidth3TUSK(str, wrapWidth, charWidthGetter, (currentLocale==null) ? Locale.getDefault() : currentLocale);

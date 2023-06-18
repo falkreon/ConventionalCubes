@@ -14,13 +14,14 @@ import java.util.stream.Collectors;
 import com.google.common.io.ByteSource;
 import com.google.gson.JsonObject;
 
+import net.minecraft.resource.ResourceIoSupplier;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.resource.pack.ResourcePack;
 import net.minecraft.resource.pack.metadata.ResourceMetadataReader;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 
-public class SyntheticAssetPack implements ResourcePack {
+public class SyntheticAssetPack /*implements ResourcePack*/ {
 	private final String name;
 	private final Map<String, ByteSource> root = new HashMap<>();
 	private final Map<Identifier, ByteSource> resources = new HashMap<>();
@@ -30,7 +31,7 @@ public class SyntheticAssetPack implements ResourcePack {
 		this.name = name;
 	}
 	
-	@Override
+	//@Override
 	public InputStream openRoot(String fileName) throws IOException {
 		//System.out.println("OpenRoot "+fileName);
 		if (fileName.contains("/")||fileName.contains("\\")) throw new IllegalArgumentException("Root files must be root files, not paths");
@@ -41,8 +42,9 @@ public class SyntheticAssetPack implements ResourcePack {
 		return file.openStream();
 	}
 
+	/*
 	@Override
-	public InputStream open(ResourceType type, Identifier id) throws IOException {
+	public ResourceIoSupplier<InputStream> open(ResourceType type, Identifier id) throws IOException {
 		//System.out.println("Open "+id);
 		
 		switch(type) {
@@ -59,9 +61,9 @@ public class SyntheticAssetPack implements ResourcePack {
 		default:
 			throw new FileNotFoundException("Unknown asset type '"+type.name()+"'.");
 		}
-	}
+	}*/
 
-	@Override
+	//@Override
 	public Collection<Identifier> findResources(ResourceType type, String namespace, String startingPath, Predicate<Identifier> pathFilter) {
 		switch(type) {
 		case CLIENT_RESOURCES:
@@ -80,7 +82,7 @@ public class SyntheticAssetPack implements ResourcePack {
 		}
 	}
 
-	@Override
+	//@Override
 	public boolean contains(ResourceType type, Identifier id) {
 		switch(type) {
 		case CLIENT_RESOURCES:
@@ -92,7 +94,7 @@ public class SyntheticAssetPack implements ResourcePack {
 		}
 	}
 
-	@Override
+	//@Override
 	public Set<String> getNamespaces(ResourceType type) {
 		switch(type) {
 		case CLIENT_RESOURCES:
@@ -108,7 +110,7 @@ public class SyntheticAssetPack implements ResourcePack {
 		}
 	}
 
-	@Override
+	//@Override
 	public <T> T parseMetadata(ResourceMetadataReader<T> metaReader) throws IOException {
 		JsonObject packObject = new JsonObject();
 		packObject.addProperty("description", "Conventional Cubes synthetic assets");
@@ -149,12 +151,12 @@ public class SyntheticAssetPack implements ResourcePack {
 		}
 	}
 
-	@Override
+	//@Override
 	public String getName() {
 		return name;
 	}
 
-	@Override
+	//@Override
 	public void close() {
 		//does nothing
 	}

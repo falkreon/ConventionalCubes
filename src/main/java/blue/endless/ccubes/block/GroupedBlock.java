@@ -3,15 +3,17 @@ package blue.endless.ccubes.block;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.quiltmc.loader.api.minecraft.ClientOnly;
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
+
 import blue.endless.ccubes.WordWrap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameterSet;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
@@ -25,8 +27,14 @@ public class GroupedBlock extends Block implements SyntheticDataBlock {
 	protected final String id;
 	protected String recipeKey = RECIPE_STONECUTTER;
 	
-	public GroupedBlock(Material material, DyeColor color, String group, String id) {
-		super(Settings.of(material, color).strength(1.0f, 15.0f));
+	public GroupedBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id) {
+		super(
+				QuiltBlockSettings
+				.copyOf(Blocks.STONE)
+				.mapColor(color)
+				.strength(1.0f, 15.0f)
+				.sounds(soundGroup)
+				);
 		this.group = group;
 		this.id = id;
 	}
@@ -37,8 +45,7 @@ public class GroupedBlock extends Block implements SyntheticDataBlock {
 		this.id = id;
 	}
 	
-	
-	@Environment(EnvType.CLIENT)
+	@ClientOnly
 	@Override
 	public void appendTooltip(ItemStack var1, BlockView var2, List<Text> var3, TooltipContext var4) {
 
@@ -52,7 +59,7 @@ public class GroupedBlock extends Block implements SyntheticDataBlock {
 	}
 	
 	@Override
-	public List<ItemStack> getDroppedStacks(BlockState var1, LootContext.Builder var2) {
+	public List<ItemStack> getDroppedStacks(BlockState var1, LootContextParameterSet.Builder var2) {
 		@SuppressWarnings("deprecation")
 		List<ItemStack> superStacks = super.getDroppedStacks(var1, var2);
 		if (!superStacks.isEmpty()) return superStacks; //If there's a json, use it

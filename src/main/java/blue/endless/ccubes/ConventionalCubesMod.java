@@ -6,13 +6,13 @@ import java.util.Map;
 
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.qsl.base.api.entrypoint.ModInitializer;
-import org.quiltmc.qsl.item.group.api.QuiltItemGroup;
 import org.quiltmc.qsl.resource.loader.api.ResourceLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import blue.endless.ccubes.asset.SyntheticAssetPack;
 import blue.endless.ccubes.block.CCubesBlocks;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resource.ResourceType;
@@ -27,8 +27,8 @@ public class ConventionalCubesMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 	
 	public static final SyntheticAssetPack syntheticDataPack = new SyntheticAssetPack("conventional_cubes_data");
-	
-	public static ItemGroup ITEMGROUP = QuiltItemGroup.builder(new Identifier(MODID, "general"))
+	public static ItemGroup ITEMGROUP = FabricItemGroup.builder()
+			.name(Text.literal("Conventional Cubes"))
 			.icon(()->new ItemStack(CCubesBlocks.SMOOTH_DOLOMITE))
 			.build();
 	
@@ -37,6 +37,7 @@ public class ConventionalCubesMod implements ModInitializer {
 		
 		CCubesBlocks.init();
 		
+		/*
 		ResourceLoader.get(ResourceType.SERVER_DATA).registerResourcePackProfileProvider((adder, factory)->{
 			PackResourceMetadata meta;
 			try {
@@ -45,7 +46,7 @@ public class ConventionalCubesMod implements ModInitializer {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		});
+		});*/
 	}
 
 }

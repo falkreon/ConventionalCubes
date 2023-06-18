@@ -7,9 +7,9 @@ import com.google.common.collect.ImmutableMap;
 import blue.endless.ccubes.ConventionalCubesMod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager.Builder;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
@@ -63,8 +63,8 @@ public class SlopeBlock extends GroupedBlock {
 	public static DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 	protected String baseTexture;
 	
-	public SlopeBlock(Material material, DyeColor color, String group, String id, String baseTexture) {
-		super(material, color, group, id);
+	public SlopeBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id, String baseTexture) {
+		super(soundGroup, color, group, id);
 		this.baseTexture = baseTexture;
 	}
 	

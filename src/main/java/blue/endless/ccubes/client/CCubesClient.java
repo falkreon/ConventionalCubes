@@ -31,11 +31,10 @@ import net.minecraft.util.Identifier;
 public class CCubesClient implements ClientModInitializer {
 	
 	public static final SyntheticAssetPack syntheticResPack = new SyntheticAssetPack("conventional_cubes_resources");
-	public static final VanillaPlusVariantProvider variantProvider = new VanillaPlusVariantProvider();
 	
 	@Override
 	public void onInitializeClient(ModContainer mod) {
-		
+		/*
 		try {
 			ByteSource iconSource = ByteSource.wrap(JarData.getData("assets/conventional_cubes/icon.png"));
 			syntheticResPack.provideRootFile("pack.png", iconSource);
@@ -46,8 +45,6 @@ public class CCubesClient implements ClientModInitializer {
 		GroupedBlock[] syntheticBlocks = CCubesBlocks.syntheticBlocks.toArray(new GroupedBlock[CCubesBlocks.syntheticBlocks.size()]);
 		
 		for (GroupedBlock block : syntheticBlocks) {
-			variantProvider.cover(block);
-			
 			try {
 				//TODO: Query block's propertymanager for blockstate type, and block for model type
 				String blockStateTemplateName = block.getBlockStateTemplate();
@@ -120,6 +117,7 @@ public class CCubesClient implements ClientModInitializer {
 		ModelLoadingRegistry.INSTANCE.registerResourceProvider(rm->new GLTFModelProvider(rm));
 		
 		ModelLoadingRegistry.INSTANCE.registerVariantProvider(rm->variantProvider.attachResourceManager(rm));
+		*/
 	}
 	
 	private static ByteSource byteSource(String s) {

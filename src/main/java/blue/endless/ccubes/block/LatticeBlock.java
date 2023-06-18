@@ -2,9 +2,9 @@ package blue.endless.ccubes.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager.Builder;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
@@ -37,8 +37,8 @@ public class LatticeBlock extends GroupedBlock {
 	protected String endTexture;
 	protected String bodyTexture;
 	
-	public LatticeBlock(Material material, DyeColor color, String group, String id) {
-		super(material, color, group, id);
+	public LatticeBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id) {
+		super(soundGroup, color, group, id);
 	}
 	
 	public LatticeBlock(Block.Settings settings, String group, String id) {

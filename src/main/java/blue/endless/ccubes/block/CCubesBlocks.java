@@ -8,23 +8,27 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import blue.endless.ccubes.ConventionalCubesMod;
-import net.minecraft.block.Material;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class CCubesBlocks {
 	public static ArrayList<GroupedBlock> syntheticBlocks = new ArrayList<>();
 	
 	public static Multimap<String, GroupedBlock> byGroup = HashMultimap.create();
 	
-	public static GroupedBlock SMOOTH_DOLOMITE;
+	public static Block SMOOTH_DOLOMITE;
 	
 	public static void init() {
-		SMOOTH_DOLOMITE = register(new GroupedBlock(Material.STONE, DyeColor.BROWN, "dolomite", "smooth_dolomite"));
+		//SMOOTH_DOLOMITE = register(new GroupedBlock(BlockSoundGroup.STONE, DyeColor.BROWN, "dolomite", "smooth_dolomite"));
 		
-		registerGroup("dolomite", Material.STONE, DyeColor.BROWN,
+		registerGroup("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"smooth_dolomite",
 				"dolomite_large_tile",
 				"dolomite_tiles",
 				"dolomite_small_tiles",
@@ -32,8 +36,9 @@ public class CCubesBlocks {
 				"dolomite_checker",
 				"dolomite_small_checker"
 				);
+		SMOOTH_DOLOMITE = retrieve("dolomite", "smooth_dolomite");
 		
-		registerGroup("oneup", Material.STONE, DyeColor.ORANGE,
+		registerGroup("oneup", BlockSoundGroup.STONE, DyeColor.ORANGE,
 				"oneup_orange_brick",
 				"oneup_orange_block",
 				"oneup_uneven_orange_brick",
@@ -41,7 +46,7 @@ public class CCubesBlocks {
 				"oneup_gold_brick"
 				);
 		
-		registerGroup("tourian", Material.METAL, DyeColor.GRAY,
+		registerGroup("tourian", BlockSoundGroup.METAL, DyeColor.GRAY,
 				"tourian_spawner",
 				"tourian_bevel",
 				"tourian_dented_bevel",
@@ -49,33 +54,40 @@ public class CCubesBlocks {
 				"tourian_hollow_block"
 				);
 		
-		registerGroup("aero", Material.METAL, DyeColor.PURPLE,
+		registerGroup("aero", BlockSoundGroup.METAL, DyeColor.PURPLE,
 				"aero_purple",
 				"aero_purple_ridged",
 				"aero_gold"
 				);
 		
-		register(new SlopeBlock(Material.STONE, DyeColor.BROWN, "dolomite", "smooth_dolomite_slope", "smooth_dolomite"));
-		register(new SlopeBlock(Material.STONE, DyeColor.BROWN, "dolomite", "dolomite_checker_slope", "dolomite_checker"));
+		register(new SlopeBlock(BlockSoundGroup.STONE, DyeColor.BROWN, "dolomite", "smooth_dolomite_slope", "smooth_dolomite"));
+		register(new SlopeBlock(BlockSoundGroup.STONE, DyeColor.BROWN, "dolomite", "dolomite_checker_slope", "dolomite_checker"));
 		
-		register(new LatticeBlock(Material.METAL, DyeColor.GRAY, "tourian", "pipe"));
+		register(new LatticeBlock(BlockSoundGroup.METAL, DyeColor.GRAY, "tourian", "pipe"));
 	}
 	
-	private static void registerGroup(String groupName, Material material, DyeColor color, String... blocks) {
+	private static void registerGroup(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
 		for(String blockName : blocks) {
-			register(new GroupedBlock(material, color, groupName, blockName));
+			register(new GroupedBlock(soundGroup, color, groupName, blockName));
 		}
 	}
 	
 	private static <T extends GroupedBlock> T register(T block) {
-		Registry.register(Registry.BLOCK, new Identifier(ConventionalCubesMod.MODID, block.getId()), block);
+		Registry.register(Registries.BLOCK, new Identifier(ConventionalCubesMod.MODID, block.getId()), block);
 		
-		BlockItem item = new BlockItem(block, new QuiltItemSettings().group(ConventionalCubesMod.ITEMGROUP)); //TODO: Lib39 Fractal
-		Registry.register(Registry.ITEM, new Identifier(ConventionalCubesMod.MODID, block.getId()), item);
+		BlockItem item = new BlockItem(block, new QuiltItemSettings());
+		Registry.register(Registries.ITEM, new Identifier(ConventionalCubesMod.MODID, block.getId()), item);
 		
 		syntheticBlocks.add(block);
 		byGroup.put(block.getGroup(), block);
 		
 		return block;
+	}
+	
+	private static Block retrieve(String group, String id) {
+		for(GroupedBlock block : byGroup.get(group)) {
+			if (block.getId().equals(id)) return block;
+		}
+		return Blocks.AIR;
 	}
 }
