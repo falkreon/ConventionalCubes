@@ -70,7 +70,7 @@ class VanillaPlusVariantProvider implements ModelVariantProvider {
 				VanillaPlusBlockState.Variant blockStateDesc = loadVariant(itemId, variant);
 				if (blockStateDesc==null) {
 					//Load up model from the default model location
-					Model model = loadModelFrom(modelId.getNamespace(), "models/block")
+					Model model = loadModelFrom(modelId.getNamespace(), "models/block");
 					return null; //loadModelFrom(modelId.getNamespace(), "models/block/"+modelId.getPath());
 				} else {
 					Identifier id = new Identifier(blockStateDesc.model);
