@@ -12,9 +12,12 @@ import org.slf4j.LoggerFactory;
 
 import blue.endless.ccubes.asset.SyntheticAssetPack;
 import blue.endless.ccubes.block.CCubesBlocks;
+import blue.endless.ccubes.block.GroupedBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.resource.pack.ResourcePackProfile.InsertionPosition;
 import net.minecraft.resource.pack.metadata.PackResourceMetadata;
@@ -26,17 +29,21 @@ public class ConventionalCubesMod implements ModInitializer {
 	public static final String MODID = "conventional_cubes";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
 	
-	public static final SyntheticAssetPack syntheticDataPack = new SyntheticAssetPack("conventional_cubes_data");
+	//public static final SyntheticAssetPack syntheticDataPack = new SyntheticAssetPack("conventional_cubes_data");
 	public static ItemGroup ITEMGROUP = FabricItemGroup.builder()
 			.name(Text.literal("Conventional Cubes"))
 			.icon(()->new ItemStack(CCubesBlocks.SMOOTH_DOLOMITE))
+			.entries((params, collector)-> {
+				for(GroupedBlock b : CCubesBlocks.allBlocks) {
+					collector.addItem(b);
+				}
+			})
 			.build();
 	
 	@Override
 	public void onInitialize(ModContainer mod) {
-		
+		Registry.register(Registries.ITEM_GROUP, new Identifier(MODID, "general"), ITEMGROUP);
 		CCubesBlocks.init();
-		
 		/*
 		ResourceLoader.get(ResourceType.SERVER_DATA).registerResourcePackProfileProvider((adder, factory)->{
 			PackResourceMetadata meta;

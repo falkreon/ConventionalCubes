@@ -1,0 +1,12 @@
+{
+	"group_name": "oneup",
+	"blocks": {
+		"cube": [
+			"orange_brick",
+			"orange_block",
+			"uneven_orange_brick",
+			"depleted_question",
+			"gold_brick"
+		]
+	}
+}

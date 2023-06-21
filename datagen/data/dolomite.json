@@ -1,0 +1,18 @@
+{
+	"group_name": "dolomite",
+	"blocks": {
+		"cube": [
+			"smooth",
+			"large_tile",
+			"tiles",
+			"small_tiles",
+			"brick",
+			"checker",
+			"small_checker"
+		],
+		"slope": [
+			"smooth",
+			"checker"
+		]
+	}
+}

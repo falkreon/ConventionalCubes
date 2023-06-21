@@ -1,0 +1,10 @@
+{
+	"group_name": "aero",
+	"blocks": {
+		"cube": [
+			"purple",
+			"purple_ridged",
+			"gold"
+		]
+	}
+}

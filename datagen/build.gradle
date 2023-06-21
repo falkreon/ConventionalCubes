@@ -1,0 +1,15 @@
+plugins {
+	id "java";
+}
+
+group = "blue.endless"
+archivesBaseName = "CCubesDatagen"
+version = "1.0.0"
+
+repositories {
+	mavenCentral();
+}
+
+dependencies {
+	implementation "blue.endless:jankson:1.2.1";
+}

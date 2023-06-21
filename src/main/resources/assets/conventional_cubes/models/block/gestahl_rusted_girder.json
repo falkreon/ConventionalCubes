@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"side": "conventional_cubes:block/gestahl/rusted_girder",
+		"end" : "conventional_cubes:block/gestahl/rusted_girder_end",
+		"particle": "conventional_cubes:block/gestahl/rusted_girder"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"group_name": "tourian",
+	"blocks": {
+		"cube": [
+			"spawner",
+			"bevel",
+			"dented_bevel",
+			"vent",
+			"hollow_block"
+		]
+	}
+}

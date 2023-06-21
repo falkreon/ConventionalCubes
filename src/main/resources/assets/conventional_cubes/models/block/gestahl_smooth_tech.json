@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"side": "conventional_cubes:block/gestahl/smooth_tech",
+		"end" : "conventional_cubes:block/gestahl/smooth_tech_end",
+		"particle": "conventional_cubes:block/gestahl/smooth_tech"
+	}
+}

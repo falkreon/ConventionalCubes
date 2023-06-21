@@ -1,0 +1,28 @@
+{
+	"group_name": "gestahl",
+	"blocks": {
+		"cube": [
+			"treads",
+			"domino",
+			"light_panel",
+			"medium_panel",
+			"dark_panel",
+			"grate",
+			"shadowed",
+			"surface",
+			"smooth_surface",
+			"gray_treads"
+		],
+		"column": [
+			"girder",
+			"rusted_girder",
+			"scaffold"
+		],
+		"side_end" : [
+			"steps",
+			"smooth_tech",
+			"rumpled_tech",
+			"platform"
+		]
+	}
+}
