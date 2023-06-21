@@ -12,7 +12,10 @@ import org.spongepowered.include.com.google.common.base.Objects;
 
 import blue.endless.ccubes.ConventionalCubesMod;
 import blue.endless.ccubes.block.CCubesBlocks;
-import blue.endless.ccubes.block.GroupedBlock;
+import blue.endless.ccubes.block.GroupedVariant;
+import blue.endless.ccubes.block.SyntheticRecipeHaver;
+import blue.endless.ccubes.block.AbstractGroupedVariant;
+import net.minecraft.block.Block;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
@@ -31,18 +34,21 @@ public class StonecutterRecipeMixin {
 		if (stack.isEmpty()) return;
 		
 		if (stack.getItem() instanceof BlockItem item) {
-			if (item.getBlock() instanceof GroupedBlock grouped) {
-				if (!GroupedBlock.RECIPE_STONECUTTER.equals(grouped.getRecipeKey())) return;
-					
-				//This is a GroupedBlock with the stonecutter key. Add all other bloccks
-				//from the same group.
+			Block block = item.getBlock();
+			if (block instanceof SyntheticRecipeHaver haver) {
+				if (!AbstractGroupedVariant.RECIPE_STONECUTTER.equals(haver.getRecipeKey())) return;
 				
-				Collection<GroupedBlock> blocksInGroup = CCubesBlocks.byGroup.get(grouped.getGroup());
-				for(GroupedBlock other : blocksInGroup) {
-					if (Objects.equal(other, grouped)) continue;
-					Identifier recipeId = new Identifier(ConventionalCubesMod.MODID, "stonecutter_"+grouped.getId()+"_to_"+other.getId());
-					StonecuttingRecipe recipe = new StonecuttingRecipe(recipeId, ConventionalCubesMod.MODID+"_"+grouped.getGroup(), Ingredient.ofItems(grouped), new ItemStack(other));
-					availableRecipes.add(recipe);
+				if (item.getBlock() instanceof GroupedVariant grouped) {
+					//This is a GroupedBlock with the stonecutter key. Add all other bloccks
+					//from the same group.
+					
+					Collection<AbstractGroupedVariant> blocksInGroup = CCubesBlocks.byGroup.get(grouped.getGroupName());
+					for(AbstractGroupedVariant other : blocksInGroup) {
+						if (Objects.equal(other, grouped)) continue;
+						Identifier recipeId = new Identifier(ConventionalCubesMod.MODID, "stonecutter_"+grouped.getIdPath()+"_to_"+other.getIdPath());
+						StonecuttingRecipe recipe = new StonecuttingRecipe(recipeId, ConventionalCubesMod.MODID+"_"+grouped.getGroupName(), Ingredient.ofItems(block), new ItemStack(other));
+						availableRecipes.add(recipe);
+					}
 				}
 			}
 		}

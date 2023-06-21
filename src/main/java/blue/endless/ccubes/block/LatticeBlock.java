@@ -16,7 +16,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.WorldAccess;
 
-public class LatticeBlock extends GroupedBlock {
+public class LatticeBlock extends AbstractGroupedVariant {
 	public static final BooleanProperty NORTH = Properties.NORTH;
 	public static final BooleanProperty SOUTH = Properties.SOUTH;
 	public static final BooleanProperty EAST = Properties.EAST;

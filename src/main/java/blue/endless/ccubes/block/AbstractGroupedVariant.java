@@ -19,15 +19,12 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.BlockView;
 
-public class GroupedBlock extends Block implements SyntheticDataBlock {
-	public static String RECIPE_STONECUTTER = "stonecutter";
-	public static String RECIPE_SAWMILL = "sawmill";
+public class AbstractGroupedVariant extends Block implements GroupedVariant, SyntheticRecipeHaver {
+	protected final String groupName;
+	protected final String variantName;
+	protected String recipeKey = SyntheticRecipeHaver.RECIPE_STONECUTTER;
 	
-	protected final String group;
-	protected final String id;
-	protected String recipeKey = RECIPE_STONECUTTER;
-	
-	public GroupedBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id) {
+	public AbstractGroupedVariant(BlockSoundGroup soundGroup, DyeColor color, String group, String variantName) {
 		super(
 				QuiltBlockSettings
 				.copyOf(Blocks.STONE)
@@ -35,21 +32,21 @@ public class GroupedBlock extends Block implements SyntheticDataBlock {
 				.strength(1.0f, 15.0f)
 				.sounds(soundGroup)
 				);
-		this.group = group;
-		this.id = id;
+		this.groupName = group;
+		this.variantName = variantName;
 	}
 	
-	public GroupedBlock(Settings settings, String group, String id) {
+	public AbstractGroupedVariant(Settings settings, String group, String variantName) {
 		super(settings);
-		this.group = group;
-		this.id = id;
+		this.groupName = group;
+		this.variantName = variantName;
 	}
 	
 	@ClientOnly
 	@Override
 	public void appendTooltip(ItemStack var1, BlockView var2, List<Text> var3, TooltipContext var4) {
 
-		String key = "conventional_cubes.blockgroup."+group+".tip";
+		String key = "conventional_cubes.blockgroup."+groupName+".tip";
 		
 		for(String s : WordWrap.translateAndWrap(key, 128)) {
 			var3.add(Text.literal(s).formatted(Formatting.GRAY, Formatting.ITALIC));
@@ -68,22 +65,31 @@ public class GroupedBlock extends Block implements SyntheticDataBlock {
 		result.add(new ItemStack(this, 1));
 		return result;
 	}
-	
-	public String getGroup() {
-		return group;
+
+	@Override
+	public String getGroupName() {
+		return groupName;
+	}
+
+	@Override
+	public String getVariantName() {
+		
+		return null;
 	}
 	
-	public String getId() {
-		return id;
+	@Override
+	public String getIdPath() {
+		return this.groupName + "_" + this.variantName;
 	}
-	
-	public GroupedBlock setRecipeKey(String key) {
-		this.recipeKey = key;
-		return this;
-	}
-	
+
+	@Override
 	public String getRecipeKey() {
 		return recipeKey;
+	}
+	
+	public AbstractGroupedVariant setRecipeKey(String key) {
+		this.recipeKey = key;
+		return this;
 	}
 }
 

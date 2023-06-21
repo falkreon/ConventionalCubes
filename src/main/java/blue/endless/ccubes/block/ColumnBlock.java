@@ -12,7 +12,7 @@ import net.minecraft.util.BlockRotation;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.Direction;
 
-public class ColumnBlock extends GroupedBlock {
+public class ColumnBlock extends AbstractGroupedVariant {
 	public static final EnumProperty<Direction.Axis> AXIS = Properties.AXIS;
 	
 	public ColumnBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id) {

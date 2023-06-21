@@ -18,9 +18,9 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.Identifier;
 
 public class CCubesBlocks {
-	public static ArrayList<GroupedBlock> allBlocks = new ArrayList<>();
+	public static ArrayList<AbstractGroupedVariant> allBlocks = new ArrayList<>();
 	
-	public static Multimap<String, GroupedBlock> byGroup = HashMultimap.create();
+	public static Multimap<String, AbstractGroupedVariant> byGroup = HashMultimap.create();
 	
 	public static Block SMOOTH_DOLOMITE;
 	
@@ -91,8 +91,8 @@ public class CCubesBlocks {
 	
 	private static void registerCubes(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
 		for(String blockName : blocks) {
-			String name = groupName+"_"+blockName;
-			register(new GroupedBlock(soundGroup, color, groupName, name));
+			//String id = groupName+"_"+blockName;
+			register(new AbstractGroupedVariant(soundGroup, color, groupName, blockName));
 		}
 	}
 	
@@ -103,21 +103,21 @@ public class CCubesBlocks {
 		}
 	}
 	
-	private static <T extends GroupedBlock> T register(T block) {
-		Registry.register(Registries.BLOCK, new Identifier(ConventionalCubesMod.MODID, block.getId()), block);
+	private static <T extends AbstractGroupedVariant> T register(T block) {
+		Registry.register(Registries.BLOCK, new Identifier(ConventionalCubesMod.MODID, block.getIdPath()), block);
 		
 		BlockItem item = new BlockItem(block, new QuiltItemSettings());
-		Registry.register(Registries.ITEM, new Identifier(ConventionalCubesMod.MODID, block.getId()), item);
+		Registry.register(Registries.ITEM, new Identifier(ConventionalCubesMod.MODID, block.getIdPath()), item);
 		
 		allBlocks.add(block);
-		byGroup.put(block.getGroup(), block);
+		byGroup.put(block.getGroupName(), block);
 		
 		return block;
 	}
 	
 	private static Block retrieve(String group, String id) {
-		for(GroupedBlock block : byGroup.get(group)) {
-			if (block.getId().equals(id)) return block;
+		for(AbstractGroupedVariant block : byGroup.get(group)) {
+			if (block.getIdPath().equals(id)) return block;
 		}
 		return Blocks.AIR;
 	}

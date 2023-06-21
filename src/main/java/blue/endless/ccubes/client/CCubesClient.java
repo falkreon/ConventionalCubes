@@ -19,7 +19,7 @@ import blue.endless.ccubes.ConventionalCubesMod;
 import blue.endless.ccubes.asset.JarData;
 import blue.endless.ccubes.asset.SyntheticAssetPack;
 import blue.endless.ccubes.block.CCubesBlocks;
-import blue.endless.ccubes.block.GroupedBlock;
+import blue.endless.ccubes.block.AbstractGroupedVariant;
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry;
 import net.minecraft.resource.ResourceType;
 import net.minecraft.resource.pack.ResourcePackSource;

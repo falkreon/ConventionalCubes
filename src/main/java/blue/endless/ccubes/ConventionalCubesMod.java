@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import blue.endless.ccubes.asset.SyntheticAssetPack;
 import blue.endless.ccubes.block.CCubesBlocks;
-import blue.endless.ccubes.block.GroupedBlock;
+import blue.endless.ccubes.block.AbstractGroupedVariant;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -34,7 +34,7 @@ public class ConventionalCubesMod implements ModInitializer {
 			.name(Text.literal("Conventional Cubes"))
 			.icon(()->new ItemStack(CCubesBlocks.SMOOTH_DOLOMITE))
 			.entries((params, collector)-> {
-				for(GroupedBlock b : CCubesBlocks.allBlocks) {
+				for(AbstractGroupedVariant b : CCubesBlocks.allBlocks) {
 					collector.addItem(b);
 				}
 			})
