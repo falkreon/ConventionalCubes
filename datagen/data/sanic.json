@@ -1,0 +1,34 @@
+{
+	"group_name": "sanic",
+	"blocks": {
+		"cube": [
+			"white_checker",
+			"white_large_tile",
+			"white_tiles",
+			"bright_checker",
+			"bright_large_tile",
+			"bright_tiles",
+			"medium_checker",
+			"medium_large_tile",
+			"medium_tiles",
+			"dark_checker",
+			"dark_large_tile",
+			"dark_tiles",
+			"darkest_large_tile",
+			"darkest_tiles",
+			"gold_oil_spike",
+			"gold_oil_spikes",
+			"oil_checker",
+			"purple_oil_spike",
+			"purple_oil_spikes"
+		],
+		"slope": [
+			"white_tiles",
+			"bright_tiles",
+			"medium_tiles",
+			"dark_tiles",
+			"darkest_tiles",
+			"oil_checker"
+		]
+	}
+}

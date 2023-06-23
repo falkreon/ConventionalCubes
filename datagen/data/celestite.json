@@ -1,0 +1,29 @@
+{
+	"group_name": "celestite",
+	"blocks": {
+		"cube": [
+			"brick",
+			"checker",
+			"hexagons",
+			"large_tile",
+			"prism",
+			"small_checker",
+			"small_tiles",
+			"smooth",
+			"tiles",
+
+			"dark_brick",
+			"dark_hexagons",
+			"dark_large_tile",
+			"dark_prism",
+			"dark_small_tiles",
+			"dark_smooth",
+			"dark_tiles"
+		],
+		"slope": [
+			"smooth",
+			"brick",
+			"checker"
+		]
+	}
+}

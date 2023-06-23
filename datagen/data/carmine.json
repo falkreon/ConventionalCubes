@@ -1,0 +1,12 @@
+{
+	"group_name": "carmine",
+	"blocks": {
+		"cube": [
+			"brick",
+			"large_tile",
+			"small_tiles",
+			"smooth",
+			"tiles"
+		]
+	}
+}

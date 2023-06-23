@@ -16,7 +16,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 
 public class SlopeBlock extends AbstractGroupedVariant {
-	public static VoxelShape[] SHAPES = new VoxelShape[4];
+	public static final VoxelShape[] SHAPES = new VoxelShape[4];
 	
 	static {
 		final double PX = 1.0/16.0;
@@ -39,17 +39,14 @@ public class SlopeBlock extends AbstractGroupedVariant {
 		SHAPES[3] = stairE;
 	}
 	
-	public static DirectionProperty FACING = Properties.HORIZONTAL_FACING;
-	protected String baseTexture;
+	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 	
-	public SlopeBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id, String baseTexture) {
-		super(soundGroup, color, group, id);
-		this.baseTexture = baseTexture;
+	public SlopeBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id) {
+		super(soundGroup, color, group, id+"_slope");
 	}
 	
-	public SlopeBlock(Block.Settings settings, String group, String id, String baseTexture) {
-		super(settings, group, id);
-		this.baseTexture = baseTexture;
+	public SlopeBlock(Block.Settings settings, String group, String id) {
+		super(settings, group, id+"_slope");
 	}
 
 	@Override

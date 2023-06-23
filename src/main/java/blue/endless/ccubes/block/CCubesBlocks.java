@@ -25,25 +25,95 @@ public class CCubesBlocks {
 	public static Block SMOOTH_DOLOMITE;
 	
 	public static void init() {
-		//SMOOTH_DOLOMITE = register(new GroupedBlock(BlockSoundGroup.STONE, DyeColor.BROWN, "dolomite", "smooth_dolomite"));
+		registerCubes("aero", BlockSoundGroup.METAL, DyeColor.PURPLE,
+				"purple",
+				"purple_ridged",
+				"purple_round",
+				"gold"
+				);
 		
-		registerCubes("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
-				"smooth",
+		registerCubes("carmine", BlockSoundGroup.STONE, DyeColor.RED,
+				"brick",
 				"large_tile",
-				"tiles",
 				"small_tiles",
+				"smooth",
+				"tiles"
+				);
+		
+		registerCubes("celestite", BlockSoundGroup.STONE, DyeColor.LIGHT_BLUE,
 				"brick",
 				"checker",
-				"small_checker"
+				"hexagons",
+				"large_tile",
+				"prism",
+				"small_checker",
+				"small_tiles",
+				"smooth",
+				"tiles",
+				
+				"dark_brick",
+				"dark_hexagons",
+				"dark_large_tile",
+				"dark_prism",
+				"dark_small_tiles",
+				"dark_smooth",
+				"dark_tiles"
+				);
+		
+		registerSlopes("celestite", BlockSoundGroup.STONE, DyeColor.LIGHT_BLUE,
+				"brick",
+				"smooth",
+				"checker"
+				);
+		
+		registerCubes("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"brick",
+				"checker",
+				"hexagons",
+				"large_tile",
+				"prism",
+				"small_checker",
+				"small_tiles",
+				"smooth",
+				"tiles",
+				
+				"dark_brick",
+				"dark_hexagons",
+				"dark_large_tile",
+				"dark_prism",
+				"dark_small_tiles",
+				"dark_smooth",
+				"dark_tiles"
 				);
 		SMOOTH_DOLOMITE = retrieve("dolomite", "dolomite_smooth");
 		
-		registerCubes("oneup", BlockSoundGroup.STONE, DyeColor.ORANGE,
-				"orange_brick",
-				"orange_block",
-				"uneven_orange_brick",
-				"depleted_question",
-				"gold_brick"
+		registerColumns("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"column"
+				);
+		
+		registerSlopes("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"brick",
+				"smooth",
+				"checker"
+				);
+		
+		registerCubes("erechtheion", BlockSoundGroup.STONE, DyeColor.WHITE,
+				"brick",
+				"large_tile",
+				"small_tiles",
+				"smooth",
+				"tiles"
+				);
+		
+		registerCubes("fortyfive", BlockSoundGroup.METAL, DyeColor.YELLOW,
+				"brick",
+				"dots",
+				"embossed",
+				"grate",
+				"large_tile",
+				"panel",
+				"t",
+				"tiles"
 				);
 		
 		registerCubes("gestahl", BlockSoundGroup.METAL, DyeColor.BROWN,
@@ -62,44 +132,147 @@ public class CCubesBlocks {
 				"gray_treads",
 				"steps"
 				);
-		//TODO: Add one-offs for catapult_tech, tangled_pipes, steps, girder, scaffold, rusted_girder
+		//TODO: Add one-offs for catapult_tech, tangled_pipes ? Different blockgroup?
 		registerColumns("gestahl", BlockSoundGroup.METAL, DyeColor.BROWN,
 				"girder",
 				"rusted_girder",
 				"scaffold"
 				);
 		
+		registerCubes("oneup", BlockSoundGroup.STONE, DyeColor.ORANGE,
+				"orange_brick",
+				"orange_block",
+				"uneven_orange_brick",
+				"depleted_question",
+				"gold_brick",
+				"bevel"
+				);
+		
+		registerCubes("peridot", BlockSoundGroup.STONE, DyeColor.LIME,
+				"brick",
+				"checker",
+				"hexagons",
+				"large_tile",
+				"prism",
+				"rock",
+				"small_checker",
+				"small_tiles",
+				"tiles",
+				
+				"dark_brick",
+				"dark_hexagons",
+				"dark_large_tile",
+				"dark_prism",
+				"dark_rock",
+				"dark_small_tiles",
+				"dark_tiles"
+				);
+		
+		registerSlopes("peridot", BlockSoundGroup.STONE, DyeColor.LIME,
+				"brick",
+				"rock",
+				"checker"
+				);
+		
+		registerCubes("sanic", BlockSoundGroup.STONE, DyeColor.LIGHT_BLUE,
+				"white_checker",
+				"white_large_tile",
+				"white_tiles",
+				"bright_checker",
+				"bright_large_tile",
+				"bright_tiles",
+				"medium_checker",
+				"medium_large_tile",
+				"medium_tiles",
+				"dark_checker",
+				"dark_large_tile",
+				"dark_tiles",
+				"darkest_large_tile",
+				"darkest_tiles",
+				
+				"gold_oil_spike",
+				"gold_oil_spikes",
+				"oil_checker",
+				"purple_oil_spike",
+				"purple_oil_spikes"
+				);
+		
+		registerSlopes("sanic", BlockSoundGroup.STONE, DyeColor.LIGHT_BLUE,
+				"white_tiles",
+				"bright_tiles",
+				"medium_tiles",
+				"dark_tiles",
+				"darkest_tiles",
+				"oil_checker"
+				);
+		
 		registerCubes("tourian", BlockSoundGroup.METAL, DyeColor.GRAY,
 				"spawner",
+				"spawner_on",
 				"bevel",
+				"block",
+				"cracked_block",
 				"dented_bevel",
-				"vent",
-				"hollow_block"
+				"hollow_block",
+				"interface",
+				"pedestal",
+				"ruined_block",
+				"small_blocks",
+				"vent"
 				);
-		
-		registerCubes("aero", BlockSoundGroup.METAL, DyeColor.PURPLE,
-				"purple",
-				"purple_ridged",
-				"gold"
-				);
-		
-		register(new SlopeBlock(BlockSoundGroup.STONE, DyeColor.BROWN, "dolomite", "dolomite_smooth_slope", "dolomite_smooth"));
-		register(new SlopeBlock(BlockSoundGroup.STONE, DyeColor.BROWN, "dolomite", "dolomite_checker_slope", "dolomite_checker"));
 		
 		register(new LatticeBlock(BlockSoundGroup.METAL, DyeColor.GRAY, "tourian", "pipe"));
+		
+		registerCubes("verdigris", BlockSoundGroup.METAL, DyeColor.GREEN,
+				"grate",
+				"spout",
+				"surface",
+				"tiles",
+				"triangles",
+				"yoku_block"
+				);
+		
+		registerColumns("verdigris", BlockSoundGroup.METAL, DyeColor.GREEN,
+				"border",
+				"girder",
+				"pipe"
+				);
+		
+		registerCubes("wingfortress", BlockSoundGroup.METAL, DyeColor.LIGHT_BLUE,
+				"brace",
+				"caution",
+				"controller",
+				"coolant",
+				"corroded",
+				"digital",
+				"fluids",
+				"gauges",
+				"lift",
+				"orb",
+				"panel",
+				"panel_light",
+				"piston",
+				"ports",
+				"scaffold",
+				"vents"
+				);
 	}
 	
 	private static void registerCubes(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
 		for(String blockName : blocks) {
-			//String id = groupName+"_"+blockName;
 			register(new AbstractGroupedVariant(soundGroup, color, groupName, blockName));
 		}
 	}
 	
 	private static void registerColumns(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
 		for(String blockName : blocks) {
-			String name = groupName+"_"+blockName;
-			register(new ColumnBlock(soundGroup, color, groupName, name));
+			register(new ColumnBlock(soundGroup, color, groupName, blockName));
+		}
+	}
+	
+	private static void registerSlopes(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
+		for(String blockName : blocks) {
+			register(new SlopeBlock(soundGroup, color, groupName, blockName));
 		}
 	}
 	

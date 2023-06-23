@@ -1,0 +1,8 @@
+	{
+	"variants": {
+		"facing=north": { "model": "conventional_cubes:block/sanic_oil_checker_slope", "y":   0 },
+		"facing=east":  { "model": "conventional_cubes:block/sanic_oil_checker_slope", "y":  90 },
+		"facing=south": { "model": "conventional_cubes:block/sanic_oil_checker_slope", "y": 180 },
+		"facing=west":  { "model": "conventional_cubes:block/sanic_oil_checker_slope", "y": 270 }
+	}
+}

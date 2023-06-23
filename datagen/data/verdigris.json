@@ -1,0 +1,18 @@
+{
+	"group_name": "verdigris",
+	"blocks": {
+		"cube": [
+			"grate",
+			"spout",
+			"surface",
+			"tiles",
+			"triangles",
+			"yoku_block"
+		],
+		"column": [
+			"border",
+			"girder",
+			"pipe"
+		]
+	}
+}

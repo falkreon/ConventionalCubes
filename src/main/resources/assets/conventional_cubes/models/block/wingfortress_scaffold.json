@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"side": "conventional_cubes:block/wingfortress/scaffold",
+		"end" : "conventional_cubes:block/wingfortress/scaffold_end",
+		"particle": "conventional_cubes:block/wingfortress/scaffold"
+	}
+}

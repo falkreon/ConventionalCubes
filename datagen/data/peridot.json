@@ -1,0 +1,29 @@
+{
+	"group_name": "peridot",
+	"blocks": {
+		"cube": [
+			"brick",
+			"checker",
+			"hexagons",
+			"large_tile",
+			"prism",
+			"rock",
+			"small_checker",
+			"small_tiles",
+			"tiles",
+			
+			"dark_brick",
+			"dark_hexagons",
+			"dark_large_tile",
+			"dark_prism",
+			"dark_rock",
+			"dark_small_tiles",
+			"dark_tiles"
+		],
+		"slope": [
+			"brick",
+			"rock",
+			"checker"
+		]
+	}
+}

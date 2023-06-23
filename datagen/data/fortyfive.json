@@ -1,0 +1,15 @@
+{
+	"group_name": "fortyfive",
+	"blocks": {
+		"cube": [
+			"brick",
+			"dots",
+			"embossed",
+			"grate",
+			"large_tile",
+			"panel",
+			"t",
+			"tiles"
+		]
+	}
+}

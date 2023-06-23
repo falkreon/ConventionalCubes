@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"side": "conventional_cubes:block/dolomite/column",
+		"end" : "conventional_cubes:block/dolomite/column_end",
+		"particle": "conventional_cubes:block/dolomite/column"
+	}
+}

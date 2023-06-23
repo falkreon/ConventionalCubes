@@ -2,15 +2,29 @@
 	"group_name": "dolomite",
 	"blocks": {
 		"cube": [
-			"smooth",
-			"large_tile",
-			"tiles",
-			"small_tiles",
 			"brick",
 			"checker",
-			"small_checker"
+			"hexagons",
+			"large_tile",
+			"prism",
+			"small_checker",
+			"small_tiles",
+			"smooth",
+			"tiles",
+
+			"dark_brick",
+			"dark_hexagons",
+			"dark_large_tile",
+			"dark_prism",
+			"dark_small_tiles",
+			"dark_smooth",
+			"dark_tiles"
+		],
+		"column": [
+			"column"
 		],
 		"slope": [
+			"brick",
 			"smooth",
 			"checker"
 		]

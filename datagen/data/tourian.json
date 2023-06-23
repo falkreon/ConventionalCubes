@@ -3,10 +3,19 @@
 	"blocks": {
 		"cube": [
 			"spawner",
+			"spawner_on",
 			"bevel",
+			"block",
+			"cracked_block",
 			"dented_bevel",
-			"vent",
-			"hollow_block"
+			"hollow_block",
+			"interface",
+			"ruined_block",
+			"small_blocks",
+			"vent"
+		],
+		"side_end": [
+			"pedestal"
 		]
 	}
 }

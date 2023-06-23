@@ -1,0 +1,25 @@
+{
+	"group_name": "wingfortress",
+	"blocks": {
+		"cube": [
+			"brace",
+			"coolant",
+			"corroded",
+			"digital",
+			"gauges",
+			"orb",
+			"panel",
+			"panel_light"
+		],
+		"side_end": [
+			"caution",
+			"controller",
+			"fluids",
+			"lift",
+			"piston",
+			"ports",
+			"scaffold",
+			"vents"
+		]
+	}
+}
