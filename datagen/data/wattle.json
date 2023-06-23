@@ -1,0 +1,19 @@
+{
+	"group_name": "wattle",
+	"blocks": {
+		"cube": [
+			"squares"
+		],
+		"side_end": [
+			"vertical",
+			"horizontal",
+			
+			"eave",
+			"brace",
+			"star_brace",
+			
+			"mini_window",
+			"port"
+		]
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"group_name": "ghosthouse",
+	"blocks": {
+		"cube": [
+			"brick",
+			"wood",
+			"gray_dents",
+			"uneven_gray_brick"
+		]
+	}
+}

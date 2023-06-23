@@ -145,7 +145,8 @@ public class CCubesBlocks {
 				"uneven_orange_brick",
 				"depleted_question",
 				"gold_brick",
-				"bevel"
+				"bevel",
+				"lime_seastone"
 				);
 		
 		registerCubes("peridot", BlockSoundGroup.STONE, DyeColor.LIME,
@@ -255,6 +256,57 @@ public class CCubesBlocks {
 				"ports",
 				"scaffold",
 				"vents"
+				);
+		
+		registerCubes("warpzone", BlockSoundGroup.STONE, DyeColor.BLUE,
+				"blue_block",
+				"blue_brick",
+				"cyan_seastone",
+				"minty_rivets",
+				"reinforced"
+				);
+		
+		registerCubes("ghosthouse", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"brick",
+				"wood",
+				"gray_dents",
+				"uneven_gray_brick"
+				);
+		
+		registerCubes("figaro", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"bright_canal",
+				"regular_canal",
+				"dark_canal",
+				"black_canal",
+				
+				"acidic_gravel",
+				"roof_slate",
+				"zozo",
+				
+				"bricks",
+				"cobble",
+				"edging",
+				"path",
+				"shingles",
+				
+				"thamasa_bricks",
+				"thamasa",
+				
+				"vector_bricks",
+				"vector"
+				);
+		
+		registerCubes("wattle", BlockSoundGroup.BAMBOO, DyeColor.WHITE,
+				"vertical",
+				"squares",
+				"horizontal",
+				
+				"eave",
+				"brace",
+				"star_brace",
+				
+				"mini_window",
+				"port"
 				);
 	}
 	

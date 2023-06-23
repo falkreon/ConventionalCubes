@@ -1,0 +1,27 @@
+{
+	"group_name": "figaro",
+	"blocks": {
+		"cube": [
+			"bright_canal",
+			"regular_canal",
+			"dark_canal",
+			"black_canal",
+			
+			"acidic_gravel",
+			"roof_slate",
+			"zozo",
+			
+			"bricks",
+			"cobble",
+			"edging",
+			"path",
+			"shingles",
+			
+			"thamasa_bricks",
+			"thamasa",
+			
+			"vector_bricks",
+			"vector"
+		]
+	}
+}

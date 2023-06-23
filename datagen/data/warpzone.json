@@ -1,0 +1,12 @@
+{
+	"group_name": "warpzone",
+	"blocks": {
+		"cube": [
+			"blue_block",
+			"blue_brick",
+			"cyan_seastone",
+			"minty_rivets",
+			"reinforced"
+		]
+	}
+}

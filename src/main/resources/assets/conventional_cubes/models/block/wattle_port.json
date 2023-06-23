@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"side": "conventional_cubes:block/wattle/port",
+		"end" : "conventional_cubes:block/wattle/port_end",
+		"particle": "conventional_cubes:block/wattle/port"
+	}
+}
