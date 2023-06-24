@@ -331,7 +331,7 @@ public class CCubesBlocks {
 	private static <T extends AbstractGroupedVariant> T register(T block) {
 		Registry.register(Registries.BLOCK, new Identifier(ConventionalCubesMod.MODID, block.getIdPath()), block);
 		
-		BlockItem item = new BlockItem(block, new QuiltItemSettings());
+		BlockItem item = new VariantBlockItem(block, new QuiltItemSettings());
 		Registry.register(Registries.ITEM, new Identifier(ConventionalCubesMod.MODID, block.getIdPath()), item);
 		
 		allBlocks.add(block);

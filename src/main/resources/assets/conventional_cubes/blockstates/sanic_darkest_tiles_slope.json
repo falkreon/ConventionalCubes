@@ -1,8 +1,12 @@
 	{
 	"variants": {
-		"facing=north": { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "y":   0 },
-		"facing=east":  { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "y":  90 },
-		"facing=south": { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "y": 180 },
-		"facing=west":  { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "y": 270 }
+		"facing=north,half=bottom": { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y":   0 },
+		"facing=east,half=bottom":  { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y":  90 },
+		"facing=south,half=bottom": { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y": 180 },
+		"facing=west,half=bottom":  { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y": 270 },
+		"facing=north,half=top":    { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y": 180, "x": 180 },
+		"facing=east,half=top":     { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y": 270, "x": 180 },
+		"facing=south,half=top":    { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y":   0, "x": 180 },
+		"facing=west,half=top":     { "model": "conventional_cubes:block/sanic_darkest_tiles_slope", "uvlock": true, "y":  90, "x": 180 }
 	}
 }

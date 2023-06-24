@@ -14,6 +14,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.context.LootContextParameterSet;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.Formatting;
@@ -46,7 +47,7 @@ public class AbstractGroupedVariant extends Block implements GroupedVariant, Syn
 	@Override
 	public void appendTooltip(ItemStack var1, BlockView var2, List<Text> var3, TooltipContext var4) {
 
-		String key = "conventional_cubes.blockgroup."+groupName+".tip";
+		String key = "blockgroup.conventional_cubes."+groupName+".tip";
 		
 		for(String s : WordWrap.translateAndWrap(key, 128)) {
 			var3.add(Text.literal(s).formatted(Formatting.GRAY, Formatting.ITALIC));
@@ -64,6 +65,15 @@ public class AbstractGroupedVariant extends Block implements GroupedVariant, Syn
 		ArrayList<ItemStack> result = new ArrayList<>(); //Otherwise just drop itself
 		result.add(new ItemStack(this, 1));
 		return result;
+	}
+	
+	@Override
+	public MutableText getName() {
+		return Text.translatable(
+				"conventional_cubes.template.block_title",
+				Text.translatable("blockgroup.conventional_cubes."+groupName),
+				Text.translatable("block.conventional_cubes."+groupName+"_"+variantName)
+				);
 	}
 
 	@Override

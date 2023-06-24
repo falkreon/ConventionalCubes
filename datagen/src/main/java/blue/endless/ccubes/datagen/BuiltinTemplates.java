@@ -38,6 +38,22 @@ public class BuiltinTemplates {
 		}
 		""";
 	
+	public static final String HORIZONTAL_HALF_BLOCKSTATE =
+		"""
+			{
+			"variants": {
+				"facing=north,half=bottom": { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y":   0 },
+				"facing=east,half=bottom":  { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y":  90 },
+				"facing=south,half=bottom": { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y": 180 },
+				"facing=west,half=bottom":  { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y": 270 },
+				"facing=north,half=top":    { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y": 180, "x": 180 },
+				"facing=east,half=top":     { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y": 270, "x": 180 },
+				"facing=south,half=top":    { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y":   0, "x": 180 },
+				"facing=west,half=top":     { "model": "conventional_cubes:block/{{appliedName}}", "uvlock": true, "y":  90, "x": 180 }
+			}
+		}
+		""";
+	
 	public static final String CUBE_ALL_BLOCKMODEL =
 		"""
 		{
@@ -86,7 +102,7 @@ public class BuiltinTemplates {
 			"cube", CUBE_ALL_BLOCKSTATE,
 			"column", AXIS_BLOCKSTATE,
 			"side_end", CUBE_ALL_BLOCKSTATE,
-			"slope", HORIZONTAL_BLOCKSTATE
+			"slope", HORIZONTAL_HALF_BLOCKSTATE
 			);
 	
 	public static final Map<String, String> MODEL_TEMPLATES = Map.of(

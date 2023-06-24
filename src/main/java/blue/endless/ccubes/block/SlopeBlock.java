@@ -4,13 +4,17 @@ import blue.endless.ccubes.VoxelHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager.Builder;
 import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
@@ -40,6 +44,7 @@ public class SlopeBlock extends AbstractGroupedVariant {
 	}
 	
 	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
+	public static final EnumProperty<BlockHalf> HALF = Properties.BLOCK_HALF;
 	
 	public SlopeBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id) {
 		super(soundGroup, color, group, id+"_slope");
@@ -51,12 +56,26 @@ public class SlopeBlock extends AbstractGroupedVariant {
 
 	@Override
 	protected void appendProperties(Builder<Block, BlockState> builder) {
-		builder.add(FACING);
+		builder.add(FACING, HALF);
 	}
 	
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext ctx) {
-		return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+		BlockHalf half = switch(ctx.getSide()) {
+			case UP -> BlockHalf.BOTTOM; //We hit the top surface of a block
+			case DOWN -> BlockHalf.TOP;  //We hit the underside of a block
+			default -> {
+				//If we hit higher than halfway up the side of the block, be the top half
+				double sideHitHeight = ctx.getHitPos().getY() - ctx.getBlockPos().getY();
+				if (sideHitHeight > 0.5) {
+					yield BlockHalf.TOP;
+				} else {
+					yield BlockHalf.BOTTOM;
+				}
+			}
+		};
+		
+		return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite()).with(HALF, half);
 	}
 	
 	@Override
