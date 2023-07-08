@@ -1,0 +1,12 @@
+{
+	"group_name": "lofi_wood",
+	"blocks": {
+		"cube": [
+			"planks",
+			"panel",
+			"polished",
+			"laminated",
+			"crate"
+		]
+	}
+}

@@ -2,6 +2,6 @@
 	"parent": "conventional_cubes:block/node.gltf",
 	"loader": "suspicious_shapes:gltf",
 	"textures": {
-		"all": "conventional_cubes:block/tourian/spawner_on"
+		"all": "conventional_cubes:block/tourian/vent_node"
 	}
 }

@@ -90,6 +90,11 @@ public class CCubesBlocks {
 		registerColumns("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
 				"column"
 				);
+		registerPillars("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"brick",
+				"smooth",
+				"checker"
+				);
 		
 		registerSlopes("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
 				"brick",
@@ -208,8 +213,6 @@ public class CCubesBlocks {
 				);
 		
 		registerCubes("tourian", BlockSoundGroup.METAL, DyeColor.GRAY,
-				"spawner",
-				"spawner_on",
 				"bevel",
 				"block",
 				"cracked_block",
@@ -222,7 +225,15 @@ public class CCubesBlocks {
 				"vent"
 				);
 		
-		register(new LatticeBlock(BlockSoundGroup.METAL, DyeColor.GRAY, "tourian", "pipe"));
+		registerNodes("tourian", BlockSoundGroup.METAL, DyeColor.GRAY,
+				"spawner",
+				"spawner_on",
+				"vent_node"
+				);
+		
+		registerPillars("tourian", BlockSoundGroup.METAL, DyeColor.GRAY,
+				"conduit"
+				);
 		
 		registerCubes("verdigris", BlockSoundGroup.METAL, DyeColor.GREEN,
 				"grate",
@@ -296,6 +307,12 @@ public class CCubesBlocks {
 				"vector"
 				);
 		
+		registerSlopes("figaro", BlockSoundGroup.STONE, DyeColor.BROWN,
+				"roof_slate",
+				"zozo",
+				"bright_canal"
+				);
+		
 		registerCubes("wattle", BlockSoundGroup.BAMBOO, DyeColor.WHITE,
 				"vertical",
 				"squares",
@@ -307,6 +324,14 @@ public class CCubesBlocks {
 				
 				"mini_window",
 				"port"
+				);
+		
+		registerCubes("lofi_wood", BlockSoundGroup.CHERRY_WOOD, DyeColor.BROWN,
+				"planks",
+				"panel",
+				"polished",
+				"laminated",
+				"crate"
 				);
 	}
 	
@@ -325,6 +350,18 @@ public class CCubesBlocks {
 	private static void registerSlopes(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
 		for(String blockName : blocks) {
 			register(new SlopeBlock(soundGroup, color, groupName, blockName));
+		}
+	}
+	
+	private static void registerNodes(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
+		for(String blockName : blocks) {
+			register(new NodeBlock(soundGroup, color, groupName, blockName));
+		}
+	}
+	
+	private static void registerPillars(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
+		for(String blockName : blocks) {
+			register(new PillarBlock(soundGroup, color, groupName, blockName));
 		}
 	}
 	

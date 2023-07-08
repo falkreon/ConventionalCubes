@@ -19,9 +19,9 @@ public class BuiltinTemplates {
 		"""
 		{
 			"variants": {
-				"axis=y":	{ "model": "conventional_cubes:block/{{name}}" },
-				"axis=z":	{ "model": "conventional_cubes:block/{{name}}", "x": 90 },
-				"axis=x":	{ "model": "conventional_cubes:block/{{name}}", "x": 90, "y": 90 }
+				"axis=y":	{ "model": "conventional_cubes:block/{{appliedName}}" },
+				"axis=z":	{ "model": "conventional_cubes:block/{{appliedName}}", "x": 90 },
+				"axis=x":	{ "model": "conventional_cubes:block/{{appliedName}}", "x": 90, "y": 90 }
 			}
 		}
 		""";
@@ -89,6 +89,29 @@ public class BuiltinTemplates {
 			}
 			""";
 	
+	public static final String PILLAR_MODEL =
+			"""
+			{
+			"parent": "conventional_cubes:block/conduit.gltf",
+			"loader": "suspicious_shapes:gltf",
+			"textures": {
+				"side": "conventional_cubes:block/{{group}}/{{variety}}",
+				"end": "conventional_cubes:block/{{group}}/{{variety}}_end"
+			}
+		}
+			""";
+	
+	public static final String NODE_MODEL =
+			"""
+			{
+			"parent": "conventional_cubes:block/node.gltf",
+			"loader": "suspicious_shapes:gltf",
+			"textures": {
+				"all": "conventional_cubes:block/{{group}}/{{variety}}"
+			}
+		}
+			""";
+	
 	public static final String CUBE_ALL_ITEM =
 		"""
 		{
@@ -102,20 +125,26 @@ public class BuiltinTemplates {
 			"cube", CUBE_ALL_BLOCKSTATE,
 			"column", AXIS_BLOCKSTATE,
 			"side_end", CUBE_ALL_BLOCKSTATE,
-			"slope", HORIZONTAL_HALF_BLOCKSTATE
+			"slope", HORIZONTAL_HALF_BLOCKSTATE,
+			"pillar", AXIS_BLOCKSTATE,
+			"node", CUBE_ALL_BLOCKSTATE
 			);
 	
 	public static final Map<String, String> MODEL_TEMPLATES = Map.of(
 			"cube", CUBE_ALL_BLOCKMODEL,
 			"column", SIDE_END_MODEL,
 			"side_end", SIDE_END_MODEL,
-			"slope", SLOPE_MODEL
+			"slope", SLOPE_MODEL,
+			"pillar", PILLAR_MODEL,
+			"node", NODE_MODEL
 			);
 	
 	public static final Map<String, Function<String, String>> NAMERS = Map.of(
 			"cube", Function.identity(),
 			"column", Function.identity(),
 			"side_end", Function.identity(),
-			"slope", (it)->it+"_slope"
+			"slope", (it)->it+"_slope",
+			"pillar", (it)->it+"_pillar",
+			"node", Function.identity()
 			);
 }

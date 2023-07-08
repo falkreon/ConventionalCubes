@@ -23,6 +23,11 @@
 		"column": [
 			"column"
 		],
+		"pillar": [
+			"brick",
+			"smooth",
+			"checker"
+		],
 		"slope": [
 			"brick",
 			"smooth",

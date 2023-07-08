@@ -1,0 +1,8 @@
+	{
+	"parent": "conventional_cubes:block/conduit.gltf",
+	"loader": "suspicious_shapes:gltf",
+	"textures": {
+		"side": "conventional_cubes:block/tourian/conduit",
+		"end": "conventional_cubes:block/tourian/conduit_end"
+	}
+}

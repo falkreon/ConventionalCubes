@@ -1,0 +1,9 @@
+{
+	"parent": "conventional_cubes:block/slope.gltf",
+	"loader": "suspicious_shapes:gltf",
+	"textures": {
+		"side": "conventional_cubes:block/figaro/zozo",
+		"top":  "conventional_cubes:block/figaro/zozo",
+		"particle": "conventional_cubes:block/figaro/zozo"
+	}
+}

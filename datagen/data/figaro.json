@@ -22,6 +22,11 @@
 			
 			"vector_bricks",
 			"vector"
+		],
+		"slope": [
+			"roof_slate",
+			"zozo",
+			"bright_canal"
 		]
 	}
 }

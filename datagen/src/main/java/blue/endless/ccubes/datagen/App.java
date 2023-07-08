@@ -53,7 +53,9 @@ public class App {
 		Path dataFolder = workingDir.resolve("data");
 		try {
 			List<Path> paths = Files.list(dataFolder).collect(Collectors.toList());
-
+			
+			int blocksGenerated = 0;
+			
 			for(Path file : paths) {
 				String fileString = new String(Files.readAllBytes(file), StandardCharsets.UTF_8);
 				try {
@@ -91,6 +93,7 @@ public class App {
 							Files.writeString(p, blockstate, StandardOpenOption.WRITE);*/
 							
 							System.out.println("    "+namer.apply(name));
+							blocksGenerated++;
 						}
 					}
 				} catch (SyntaxError e) {
@@ -99,7 +102,7 @@ public class App {
 			}
 
 
-			System.out.println("Complete.");
+			System.out.println("Complete. Data for "+blocksGenerated+" blocks generated.");
 
 
 

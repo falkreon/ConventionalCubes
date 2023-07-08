@@ -1,0 +1,9 @@
+	{
+	"parent": "conventional_cubes:block/conduit.gltf",
+	"loader": "suspicious_shapes:gltf",
+	"uvLock": true,
+	"textures": {
+		"side": "conventional_cubes:block/dolomite/checker",
+		"end": "conventional_cubes:block/dolomite/checker_end"
+	}
+}

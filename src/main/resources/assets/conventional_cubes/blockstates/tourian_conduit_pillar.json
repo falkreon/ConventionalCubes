@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"axis=y":	{ "model": "conventional_cubes:block/tourian_conduit_pillar" },
+		"axis=z":	{ "model": "conventional_cubes:block/tourian_conduit_pillar", "x": 90 },
+		"axis=x":	{ "model": "conventional_cubes:block/tourian_conduit_pillar", "x": 90, "y": 90 }
+	}
+}

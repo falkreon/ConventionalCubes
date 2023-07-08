@@ -2,8 +2,6 @@
 	"group_name": "tourian",
 	"blocks": {
 		"cube": [
-			"spawner",
-			"spawner_on",
 			"bevel",
 			"block",
 			"cracked_block",
@@ -16,6 +14,14 @@
 		],
 		"side_end": [
 			"pedestal"
+		],
+		"pillar": [
+			"conduit"
+		],
+		"node": [
+			"spawner",
+			"spawner_on",
+			"vent_node"
 		]
 	}
 }
