@@ -1,6 +1,7 @@
 {
 	"parent": "conventional_cubes:block/slope.gltf",
 	"loader": "suspicious_shapes:gltf",
+	"uvlock": true,
 	"textures": {
 		"side": "conventional_cubes:block/sanic/oil_checker",
 		"top":  "conventional_cubes:block/sanic/oil_checker",

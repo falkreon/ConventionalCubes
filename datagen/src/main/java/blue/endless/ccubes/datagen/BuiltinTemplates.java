@@ -81,6 +81,7 @@ public class BuiltinTemplates {
 			{
 				"parent": "conventional_cubes:block/slope.gltf",
 				"loader": "suspicious_shapes:gltf",
+				"uvlock": true,
 				"textures": {
 					"side": "conventional_cubes:block/{{group}}/{{variety}}",
 					"top":  "conventional_cubes:block/{{group}}/{{variety}}",

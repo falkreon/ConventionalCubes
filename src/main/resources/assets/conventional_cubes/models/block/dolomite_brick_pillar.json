@@ -1,7 +1,6 @@
 	{
 	"parent": "conventional_cubes:block/conduit.gltf",
 	"loader": "suspicious_shapes:gltf",
-	"uvLock": false,
 	"textures": {
 		"side": "conventional_cubes:block/dolomite/brick",
 		"end": "conventional_cubes:block/dolomite/brick_end"
