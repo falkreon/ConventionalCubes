@@ -40,7 +40,6 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 	
-	//modRuntimeOnly 'maven.modrinth:arch-ex:12lKJUO4';
 	modRuntimeOnly('io.github.debuggyteam:architecture-extensions:3.4.1+1.20.1') {
 		transitive = false;
 		exclude group: 'org.quiltmc.quilted-fabric-api', module: 'quilted-fabric-api';
