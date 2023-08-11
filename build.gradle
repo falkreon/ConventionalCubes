@@ -7,8 +7,23 @@ archivesBaseName = project.archives_base_name
 version = "${project.version}+${project.minecraft}"
 group = project.maven_group
 
+def iris = true
+
 repositories {
+	mavenCentral();
 	mavenLocal(); //TODO: When Suspicious Shapes is approved, use Modrinth Maven instead
+	
+	exclusiveContent {
+		forRepository {
+			maven {
+				name = "Modrinth"
+				url = "https://api.modrinth.com/maven"
+			}
+		}
+		filter {
+			includeGroup "maven.modrinth"
+		}
+	}
 }
 
 dependencies {
@@ -19,11 +34,27 @@ dependencies {
 	modImplementation "org.quiltmc:quilt-loader:${project.quilt_loader}";
 	modImplementation "org.quiltmc.quilted-fabric-api:quilted-fabric-api:${project.quilted_fabric_api}";
 
-	modImplementation include("gay.debuggy:SuspiciousShapes:1.0.2+1.20.1");
+	modImplementation include("gay.debuggy:SuspiciousShapes:1.0.3+1.20.1") { transitive = false } //qmj only lists >=1.0.2 because it can negotiate down to that feature level
 
 	testCompileOnly 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+	
+	//modRuntimeOnly 'maven.modrinth:arch-ex:12lKJUO4';
+	modRuntimeOnly('io.github.debuggyteam:architecture-extensions:3.4.1+1.20.1') {
+		transitive = false;
+		exclude group: 'org.quiltmc.quilted-fabric-api', module: 'quilted-fabric-api';
+		exclude group: 'org.quiltmc.qsl', module: 'qsl';
+	}
+	modRuntimeOnly 'maven.modrinth:static-data:1.0.1+1.20';
+	
+	if (iris) {
+		modImplementation 'maven.modrinth:iris:1.6.4+1.20'
+		modImplementation 'maven.modrinth:sodium:vgceLbdH'
+		modImplementation 'maven.modrinth:indium:1.0.21+mc1.20.1'
+		modImplementation 'org.anarres:jcpp:1.4.14'
+		modImplementation 'io.github.douira:glsl-transformer:2.0.0'
+	}
 }
 
 processResources {

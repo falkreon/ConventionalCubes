@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "ghosthouse/wood",
+	"base_block": "conventional_cubes:ghosthouse_wood",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "brown",
+	"types_to_generate": [ "#wood" ]
+}

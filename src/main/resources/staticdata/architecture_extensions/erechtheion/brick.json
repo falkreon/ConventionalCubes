@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "erechtheion/brick",
+	"base_block": "conventional_cubes:erechtheion_brick",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "white",
+	"types_to_generate": [ "#stone" ]
+}

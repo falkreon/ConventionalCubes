@@ -5,17 +5,22 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.enums.BlockHalf;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.StateManager.Builder;
+import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.WorldAccess;
 
 public class SlopeBlock extends AbstractGroupedVariant {
 	//public static final VoxelShape[] SHAPES = new VoxelShape[8];
@@ -29,42 +34,24 @@ public class SlopeBlock extends AbstractGroupedVariant {
 	private VoxelShape upE = VoxelHelper.rotate(stairN, 180, 270, 0);
 	private VoxelShape upS = VoxelHelper.rotate(stairN, 180,   0, 0);
 	private VoxelShape upW = VoxelHelper.rotate(stairN, 180,  90, 0);
-	/*
-	static {
-		final double PX = 1.0/16.0;
-		
-		VoxelShape stairN = VoxelShapes.empty();
-		for(int i=0; i<16; i++) {
-			double stairWidth = (15-i)*PX;
-			double stairStart = (i+1)*PX;
-			VoxelShape cur = VoxelShapes.cuboid(0, i*PX, stairStart, 1, (i+1)*PX, stairStart+stairWidth);
-			stairN = VoxelShapes.union(stairN, cur);
-		}
-		
-		VoxelShape stairE = VoxelHelper.rotateHorizontal(stairN, 90);
-		VoxelShape stairS = VoxelHelper.rotateHorizontal(stairN, 180);
-		VoxelShape stairW = VoxelHelper.rotateHorizontal(stairN, 270);
-		
-		SHAPES[0] = stairN;
-		SHAPES[1] = stairS;
-		SHAPES[2] = stairW;
-		SHAPES[3] = stairE;
-	}*/
 	
 	public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 	public static final EnumProperty<BlockHalf> HALF = Properties.BLOCK_HALF;
+	public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 	
 	public SlopeBlock(BlockSoundGroup soundGroup, DyeColor color, String group, String id) {
 		super(soundGroup, color, group, id+"_slope");
+		setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false));
 	}
 	
 	public SlopeBlock(Block.Settings settings, String group, String id) {
 		super(settings, group, id+"_slope");
+		setDefaultState(stateManager.getDefaultState().with(WATERLOGGED, false));
 	}
 
 	@Override
 	protected void appendProperties(Builder<Block, BlockState> builder) {
-		builder.add(FACING, HALF);
+		builder.add(FACING, HALF, WATERLOGGED);
 	}
 	
 	@Override
@@ -83,7 +70,21 @@ public class SlopeBlock extends AbstractGroupedVariant {
 			}
 		};
 		
-		return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite()).with(HALF, half);
+		return this.getDefaultState()
+				.with(FACING, ctx.getPlayerFacing().getOpposite()).with(HALF, half)
+				.with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
+	}
+	
+	@Override
+	public FluidState getFluidState(BlockState state) {
+		return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : Fluids.EMPTY.getDefaultState();
+	}
+	
+	@Override
+	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
+		if (state.get(WATERLOGGED)) world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
+		
+		return state;
 	}
 	
 	@Override

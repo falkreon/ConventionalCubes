@@ -1,0 +1,12 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "figaro/acidic_gravel",
+	"base_block": "conventional_cubes:figaro_acidic_gravel",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "blue",
+	"types_to_generate": [
+		"arch", "beam", "wall_column", "post_lantern", "rod", "facade",
+		"octagonal_column", "round_arch", "round_fence_post", "roof"
+	]
+}

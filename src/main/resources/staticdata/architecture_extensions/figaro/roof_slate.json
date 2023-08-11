@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "figaro/roof_slate",
+	"base_block": "conventional_cubes:figaro_roof_slate",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "blue",
+	"types_to_generate": [ "#stone" ]
+}

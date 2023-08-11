@@ -2,6 +2,7 @@ package blue.endless.ccubes.block;
 
 import java.util.ArrayList;
 
+import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
 import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
 
 import com.google.common.collect.HashMultimap;
@@ -64,6 +65,22 @@ public class CCubesBlocks {
 				"brick",
 				"smooth",
 				"checker"
+				);
+		
+		registerLamps("crystal_lamp", BlockSoundGroup.AMETHYST_BLOCK, DyeColor.WHITE,
+				"golbez",
+				"pulsing",
+				"black",
+				"blue",
+				"green",
+				"lime",
+				"magenta",
+				"mint",
+				"orange",
+				"pink",
+				"sky",
+				"yellow",
+				"undersea_palace"
 				);
 		
 		registerCubes("dolomite", BlockSoundGroup.STONE, DyeColor.BROWN,
@@ -362,6 +379,18 @@ public class CCubesBlocks {
 	private static void registerPillars(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
 		for(String blockName : blocks) {
 			register(new PillarBlock(soundGroup, color, groupName, blockName));
+		}
+	}
+	
+	private static void registerLamps(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
+		for(String blockName : blocks) {
+			Block.Settings settings = QuiltBlockSettings
+					.copyOf(Blocks.STONE)
+					.mapColor(color)
+					.strength(1.0f, 15.0f)
+					.luminance(15)
+					.sounds(soundGroup);
+			register(new AbstractGroupedVariant(settings, groupName, blockName));
 		}
 	}
 	

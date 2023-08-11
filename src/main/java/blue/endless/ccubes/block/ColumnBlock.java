@@ -36,6 +36,7 @@ public class ColumnBlock extends AbstractGroupedVariant {
 	
 	@Override
 	public BlockState getPlacementState(ItemPlacementContext ctx) {
-		return this.getDefaultState().with(AXIS, ctx.getSide().getAxis());
+		return this.getDefaultState()
+				.with(AXIS, ctx.getSide().getAxis());
 	}
 }

@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "lofi_wood/panel",
+	"base_block": "conventional_cubes:lofi_wood_panel",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "brown",
+	"types_to_generate": [ "#wood" ]
+}

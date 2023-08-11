@@ -19,7 +19,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "blue.endless.ccubes.ConventionalCubesMod"
+			"init": "blue.endless.ccubes.ConventionalCubesMod",
+			"client_init": "blue.endless.ccubes.client.ConventionalCubesClient"
 		},
 		"depends": [
 			{

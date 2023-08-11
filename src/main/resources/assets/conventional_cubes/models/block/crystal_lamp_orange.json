@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"all": "conventional_cubes:block/crystal_lamp/orange"
+	}
+}

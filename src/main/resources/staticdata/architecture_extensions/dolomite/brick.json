@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "dolomite/brick",
+	"base_block": "conventional_cubes:dolomite_brick",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "sand",
+	"types_to_generate": [ "#stone" ]
+}

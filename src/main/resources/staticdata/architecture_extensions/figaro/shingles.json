@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "figaro/shingles",
+	"base_block": "conventional_cubes:figaro_shingles",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "gray",
+	"types_to_generate": [ "#stone" ]
+}

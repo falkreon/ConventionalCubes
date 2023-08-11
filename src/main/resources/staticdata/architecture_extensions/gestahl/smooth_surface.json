@@ -1,0 +1,12 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "gestahl/smooth_surface",
+	"base_block": "conventional_cubes:gestahl_smooth_surface",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "brown",
+	"types_to_generate": [
+		"arch", "beam", "wall_column", "post_lantern", "rod", "facade", "tube_metal",
+		"i_beam", "octagonal_column", "round_arch", "round_fence_post"
+	]
+}

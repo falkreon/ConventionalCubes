@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "celestite/dark_brick",
+	"base_block": "conventional_cubes:celestite_dark_brick",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "blue",
+	"types_to_generate": [ "#stone" ]
+}

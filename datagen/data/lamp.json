@@ -1,0 +1,20 @@
+{
+	"group_name": "crystal_lamp",
+	"blocks": {
+		"cube": [
+			"golbez",
+			"pulsing",
+			"black",
+			"blue",
+			"green",
+			"lime",
+			"magenta",
+			"mint",
+			"orange",
+			"pink",
+			"sky",
+			"yellow",
+			"undersea_palace"
+		]
+	}
+}

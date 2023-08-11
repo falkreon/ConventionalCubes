@@ -216,7 +216,7 @@
 	"block.conventional_cubes.celestite_brick_slope"      : "Brick Slope",
 	"block.conventional_cubes.celestite_smooth_slope"     : "Smooth Slope",
 	"block.conventional_cubes.celestite_checker_slope"    : "Checkered Slope",
-
+	
 	"blockgroup.conventional_cubes.peridot"               : "Peridot",
 	"blockgroup.conventional_cubes.peridot.tip"           : "We're the same, except, you don't have to be alone.",
 	"block.conventional_cubes.peridot_brick"              : "Brick",
@@ -299,5 +299,51 @@
 	"block.conventional_cubes.aero_purple"           : "Purple",
 	"block.conventional_cubes.aero_purple_ridged"    : "Purple Ridged",
 	"block.conventional_cubes.aero_purple_round"     : "Purple Round",
-	"block.conventional_cubes.aero_gold"             : "Gold"
+	"block.conventional_cubes.aero_gold"             : "Gold",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.carmine/brick": "Carmine Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.carmine/tiles": "Carmine Tile",
+	"architecture_extensions.grouped_block.conventional_cubes.carmine/smooth": "Smooth Carmine",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.celestite/brick": "Celestite Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.celestite/dark_brick": "Celestite Dark Brick",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.dolomite/brick": "Dolomite Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.dolomite/checker": "Dolomite Checkered",
+	"architecture_extensions.grouped_block.conventional_cubes.dolomite/column": "Dolomite Column",
+	"architecture_extensions.grouped_block.conventional_cubes.dolomite/smooth": "Smooth Dolomite",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.erechtheion/brick": "Erechtheion Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.erechtheion/tiles": "Erechtheion Tile",
+	"architecture_extensions.grouped_block.conventional_cubes.erechtheion/smooth": "Smooth Erechtheion",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/acidic_gravel": "Figaro Acidic Gravel",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/bricks": "Figaro Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/regular_canal": "Figaro Canal",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/cobble": "Figaro Cobble",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/path": "Figaro Path",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/roof_slate": "Figaro Slate",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/shingles": "Figaro Shingled",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/thamasa_bricks": "Figaro Thamasa Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/thamasa": "Figaro Thamasa",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/vector_bricks": "Figaro Vector Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/vector": "Figaro Vector",
+	"architecture_extensions.grouped_block.conventional_cubes.figaro/zozo": "Figaro Zozo",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.gestahl/grate": "Gestahl Grate",
+	"architecture_extensions.grouped_block.conventional_cubes.gestahl/medium_panel": "Gestahl Medium Panel",
+	"architecture_extensions.grouped_block.conventional_cubes.gestahl/smooth_surface": "Gestahl Smooth Surface",
+	"architecture_extensions.grouped_block.conventional_cubes.gestahl/steps": "Gestahl Step",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.ghosthouse/brick": "Ghost House Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.ghosthouse/gray_dents": "Ghost House Gray Dent",
+	"architecture_extensions.grouped_block.conventional_cubes.ghosthouse/uneven_gray_brick": "Ghost House Uneven Gray Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.ghosthouse/wood": "Ghost House Wood",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.lofi_wood/laminated": "Lo-Fi Wood Laminated",
+	"architecture_extensions.grouped_block.conventional_cubes.lofi_wood/panel": "Lo-Fi Wood Panel",
+	"architecture_extensions.grouped_block.conventional_cubes.lofi_wood/planks": "Lo-Fi Wood Plank",
+	"architecture_extensions.grouped_block.conventional_cubes.lofi_wood/polished": "Lo-Fi Wood Polished",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.oneup/bevel": "1Up Bevel"
 }

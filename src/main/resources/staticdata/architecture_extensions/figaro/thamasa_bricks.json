@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "figaro/thamasa_bricks",
+	"base_block": "conventional_cubes:figaro_thamasa_bricks",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "gray",
+	"types_to_generate": [ "#brick" ]
+}

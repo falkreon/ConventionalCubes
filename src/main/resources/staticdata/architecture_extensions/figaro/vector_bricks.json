@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "figaro/vector_bricks",
+	"base_block": "conventional_cubes:figaro_vector_bricks",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "sand",
+	"types_to_generate": [ "#brick" ]
+}
