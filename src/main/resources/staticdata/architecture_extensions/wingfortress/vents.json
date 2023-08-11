@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "wingfortress/vents",
+	"base_block": "conventional_cubes:wingfortress_vents",
+	"textures": "end",
+	"recipes": "stonecutter",
+	"map_color": "blue",
+	"types_to_generate": [ "#stone" ]
+}

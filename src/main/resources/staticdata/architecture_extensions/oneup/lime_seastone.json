@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "oneup/lime_seastone",
+	"base_block": "conventional_cubes:oneup_lime_seastone",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "cyan",
+	"types_to_generate": [ "#stone" ]
+}

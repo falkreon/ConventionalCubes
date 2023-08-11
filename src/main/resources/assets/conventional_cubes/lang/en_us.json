@@ -345,5 +345,19 @@
 	"architecture_extensions.grouped_block.conventional_cubes.lofi_wood/planks": "Lo-Fi Wood Plank",
 	"architecture_extensions.grouped_block.conventional_cubes.lofi_wood/polished": "Lo-Fi Wood Polished",
 	
-	"architecture_extensions.grouped_block.conventional_cubes.oneup/bevel": "1Up Bevel"
+	"architecture_extensions.grouped_block.conventional_cubes.oneup/bevel": "1Up Bevel",
+	"architecture_extensions.grouped_block.conventional_cubes.oneup/lime_seastone": "1Up Lime Seastone",
+	"architecture_extensions.grouped_block.conventional_cubes.oneup/uneven_orange_brick": "1Up Uneven Orange Brick",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.peridot/brick": "Peridot Brick",
+	"architecture_extensions.grouped_block.conventional_cubes.peridot/rock": "Peridot Gemrock",
+	"architecture_extensions.grouped_block.conventional_cubes.peridot/tiles": "Peridot Tile",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.sanic/medium_checker": "Sanic Checker",
+	"architecture_extensions.grouped_block.conventional_cubes.sanic/oil_checker": "Sanic Oil Ocean Checker",
+	
+	"architecture_extensions.grouped_block.conventional_cubes.wingfortress/end": "Wing Fortress End",
+	"architecture_extensions.grouped_block.conventional_cubes.wingfortress/panel": "Wing Fortress Panel",
+	"architecture_extensions.grouped_block.conventional_cubes.wingfortress/corroded": "Wing Fortress Corroded",
+	"architecture_extensions.grouped_block.conventional_cubes.wingfortress/vents": "Wing Fortress Vent"
 }

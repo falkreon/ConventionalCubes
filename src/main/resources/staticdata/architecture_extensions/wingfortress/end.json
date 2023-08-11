@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "wingfortress/end",
+	"base_block": "conventional_cubes:wingfortress_controller",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "black",
+	"types_to_generate": [ "#stone" ]
+}

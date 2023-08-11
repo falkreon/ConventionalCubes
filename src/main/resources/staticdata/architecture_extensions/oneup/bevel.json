@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "oneup/bevel",
+	"base_block": "conventional_cubes:oneup_bevel",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "yellow",
+	"types_to_generate": [ "#stone" ]
+}

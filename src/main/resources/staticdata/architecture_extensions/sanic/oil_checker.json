@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "sanic/oil_checker",
+	"base_block": "conventional_cubes:sanic_oil_checker",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "purple",
+	"types_to_generate": [ "#stone" ]
+}

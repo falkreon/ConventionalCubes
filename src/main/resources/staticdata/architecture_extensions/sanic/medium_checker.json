@@ -1,0 +1,9 @@
+{
+	"only_if_present": "conventional_cubes",
+	"name": "sanic/medium_checker",
+	"base_block": "conventional_cubes:sanic_medium_checker",
+	"textures": "all",
+	"recipes": "stonecutter",
+	"map_color": "light_blue",
+	"types_to_generate": [ "#stone" ]
+}
