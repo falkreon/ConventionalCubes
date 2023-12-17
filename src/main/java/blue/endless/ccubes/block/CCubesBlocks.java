@@ -2,13 +2,12 @@ package blue.endless.ccubes.block;
 
 import java.util.ArrayList;
 
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
-import org.quiltmc.qsl.item.setting.api.QuiltItemSettings;
-
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import blue.endless.ccubes.ConventionalCubesMod;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -384,7 +383,7 @@ public class CCubesBlocks {
 	
 	private static void registerLamps(String groupName, BlockSoundGroup soundGroup, DyeColor color, String... blocks) {
 		for(String blockName : blocks) {
-			Block.Settings settings = QuiltBlockSettings
+			Block.Settings settings = FabricBlockSettings
 					.copyOf(Blocks.STONE)
 					.mapColor(color)
 					.strength(1.0f, 15.0f)
@@ -397,7 +396,7 @@ public class CCubesBlocks {
 	private static <T extends AbstractGroupedVariant> T register(T block) {
 		Registry.register(Registries.BLOCK, new Identifier(ConventionalCubesMod.MODID, block.getIdPath()), block);
 		
-		BlockItem item = new VariantBlockItem(block, new QuiltItemSettings());
+		BlockItem item = new VariantBlockItem(block, new FabricItemSettings());
 		Registry.register(Registries.ITEM, new Identifier(ConventionalCubesMod.MODID, block.getIdPath()), item);
 		
 		allBlocks.add(block);

@@ -1,20 +1,18 @@
 package blue.endless.ccubes.client;
 
-import org.quiltmc.loader.api.ModContainer;
-import org.quiltmc.qsl.base.api.entrypoint.client.ClientModInitializer;
-import org.quiltmc.qsl.command.api.client.ClientCommandRegistrationCallback;
-import org.quiltmc.qsl.command.api.client.QuiltClientCommandSource;
-
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.item.ItemStack;
 
 public class ConventionalCubesClient implements ClientModInitializer {
 	
-	public static int debug(CommandContext<QuiltClientCommandSource> context) throws CommandSyntaxException {
+	public static int debug(CommandContext<FabricClientCommandSource> context) throws CommandSyntaxException {
 		ItemStack heldItem = context.getSource().getPlayer().getInventory().getMainHandStack();
 		context.getSource().sendFeedback(heldItem.getName());
 		
@@ -22,11 +20,11 @@ public class ConventionalCubesClient implements ClientModInitializer {
 	}
 	
 	@Override
-	public void onInitializeClient(ModContainer mod) {
-		ClientCommandRegistrationCallback.EVENT.register((dispatcher, buildContext, environment) -> {
+	public void onInitializeClient() {
+		ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
 			var root = dispatcher.getRoot();
-			var concubes = LiteralArgumentBuilder.<QuiltClientCommandSource>literal("concubes").build();
-			var debug = LiteralArgumentBuilder.<QuiltClientCommandSource>literal("debug")
+			var concubes = LiteralArgumentBuilder.<FabricClientCommandSource>literal("concubes").build();
+			var debug = LiteralArgumentBuilder.<FabricClientCommandSource>literal("debug")
 					.executes(ConventionalCubesClient::debug)
 					.build();
 			

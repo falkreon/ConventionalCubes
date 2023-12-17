@@ -1,13 +1,13 @@
 plugins {
 	id "maven-publish"
-	id "org.quiltmc.loom" version "1.2.3"
+	id 'fabric-loom' version '1.4-SNAPSHOT'
 }
 
 archivesBaseName = project.archives_base_name
-version = "${project.version}+${project.minecraft}"
+version = "${project.version}+${project.minecraft_version}"
 group = project.maven_group
 
-def iris = true
+//def iris = true
 
 repositories {
 	mavenCentral();
@@ -27,39 +27,42 @@ repositories {
 }
 
 dependencies {
-	minecraft "com.mojang:minecraft:${project.minecraft}";
+	
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	mappings "org.quiltmc:quilt-mappings:${project.minecraft}+build.${project.quilt_mappings}:intermediary-v2";
+	// Fabric API. This is technically optional, but you probably want it anyway.
+	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation "org.quiltmc:quilt-loader:${project.quilt_loader}";
-	modImplementation "org.quiltmc.quilted-fabric-api:quilted-fabric-api:${project.quilted_fabric_api}";
-
-	modImplementation include("gay.debuggy:SuspiciousShapes:1.0.3+1.20.1") { transitive = false } //qmj only lists >=1.0.2 because it can negotiate down to that feature level
+	modImplementation include("gay.debuggy:SuspiciousShapes:1.0.5+1.20.4") { transitive = false }
 
 	testCompileOnly 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 	
+	
+	/*
 	modRuntimeOnly('io.github.debuggyteam:architecture-extensions:3.4.1+1.20.1') {
 		transitive = false;
 		exclude group: 'org.quiltmc.quilted-fabric-api', module: 'quilted-fabric-api';
 		exclude group: 'org.quiltmc.qsl', module: 'qsl';
-	}
-	modRuntimeOnly 'maven.modrinth:static-data:1.0.1+1.20';
-	
+	}*/
+	//modRuntimeOnly 'maven.modrinth:static-data:1.0.1+1.20';
+	/*
 	if (iris) {
 		modImplementation 'maven.modrinth:iris:1.6.4+1.20'
 		modImplementation 'maven.modrinth:sodium:vgceLbdH'
 		modImplementation 'maven.modrinth:indium:1.0.21+mc1.20.1'
 		modImplementation 'org.anarres:jcpp:1.4.14'
 		modImplementation 'io.github.douira:glsl-transformer:2.0.0'
-	}
+	}*/
 }
 
 processResources {
 	inputs.property "version", version
 
-	filesMatching('quilt.mod.json') {
+	filesMatching('fabric.mod.json') {
 		expand "version": version
 	}
 }

@@ -71,7 +71,7 @@ public class SlopeBlock extends AbstractGroupedVariant {
 		};
 		
 		return this.getDefaultState()
-				.with(FACING, ctx.getPlayerFacing().getOpposite()).with(HALF, half)
+				.with(FACING, ctx.getHorizontalPlayerFacing().getOpposite()).with(HALF, half)
 				.with(WATERLOGGED, ctx.getWorld().getFluidState(ctx.getBlockPos()).getFluid() == Fluids.WATER);
 	}
 	

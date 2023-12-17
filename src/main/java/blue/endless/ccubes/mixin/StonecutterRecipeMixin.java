@@ -22,7 +22,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.StonecuttingRecipe;
 import net.minecraft.screen.StonecutterScreenHandler;
-import net.minecraft.util.Identifier;
 
 @Mixin(StonecutterScreenHandler.class)
 public class StonecutterRecipeMixin {
@@ -45,8 +44,8 @@ public class StonecutterRecipeMixin {
 					Collection<AbstractGroupedVariant> blocksInGroup = CCubesBlocks.byGroup.get(grouped.getGroupName());
 					for(AbstractGroupedVariant other : blocksInGroup) {
 						if (Objects.equal(other, grouped)) continue;
-						Identifier recipeId = new Identifier(ConventionalCubesMod.MODID, "stonecutter_"+grouped.getIdPath()+"_to_"+other.getIdPath());
-						StonecuttingRecipe recipe = new StonecuttingRecipe(recipeId, ConventionalCubesMod.MODID+"_"+grouped.getGroupName(), Ingredient.ofItems(block), new ItemStack(other));
+						//Identifier recipeId = new Identifier(ConventionalCubesMod.MODID, "stonecutter_"+grouped.getIdPath()+"_to_"+other.getIdPath());
+						StonecuttingRecipe recipe = new StonecuttingRecipe(ConventionalCubesMod.MODID+"_"+grouped.getGroupName(), Ingredient.ofItems(block), new ItemStack(other));
 						availableRecipes.add(recipe);
 					}
 				}

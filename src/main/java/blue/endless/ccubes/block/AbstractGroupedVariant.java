@@ -3,10 +3,10 @@ package blue.endless.ccubes.block;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.quiltmc.loader.api.minecraft.ClientOnly;
-import org.quiltmc.qsl.block.extensions.api.QuiltBlockSettings;
-
 import blue.endless.ccubes.WordWrap;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -27,7 +27,7 @@ public class AbstractGroupedVariant extends Block implements GroupedVariant, Syn
 	
 	public AbstractGroupedVariant(BlockSoundGroup soundGroup, DyeColor color, String group, String variantName) {
 		super(
-				QuiltBlockSettings
+				FabricBlockSettings
 				.copyOf(Blocks.STONE)
 				.mapColor(color)
 				.strength(1.0f, 15.0f)
@@ -43,7 +43,7 @@ public class AbstractGroupedVariant extends Block implements GroupedVariant, Syn
 		this.variantName = variantName;
 	}
 	
-	@ClientOnly
+	@Environment(EnvType.CLIENT)
 	@Override
 	public void appendTooltip(ItemStack var1, BlockView var2, List<Text> var3, TooltipContext var4) {
 

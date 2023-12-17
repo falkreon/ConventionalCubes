@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "conventional_cubes",
+	"version": "${version}",
+	"name": "Conventional Cubes",
+	"description": "Decorative blocks: vintage games, clean new materials, and useful shapes",
+	"authors": [
+		"Falkreon"
+	],
+	"contact": {
+		"homepage": "https://github.com/falkreon/ConventionalCubes",
+		"issues": "https://github.com/falkreon/ConventionalCubes/issues",
+		"sources": "https://github.com/falkreon/ConventionalCubes"
+	},
+	"license": "MIT",
+	"icon": "assets/conventional_cubes/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [ "blue.endless.ccubes.ConventionalCubesMod" ],
+		"client": [ "blue.endless.ccubes.client.ConventionalCubesClient" ]
+	},
+	"mixins": [
+		"conventional_cubes.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.0",
+		"minecraft": "~1.20.4",
+		"java": ">=17",
+		"fabric-api": "*",
+		"suspicious_shapes": "~1.0.5"
+	}
+}
