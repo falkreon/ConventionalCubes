@@ -1,4 +1,4 @@
-	{
+{
 	"parent": "conventional_cubes:block/conduit.gltf",
 	"loader": "suspicious_shapes:gltf",
 	"textures": {
